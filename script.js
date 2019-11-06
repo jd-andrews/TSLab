@@ -1,5 +1,21 @@
 "use strict";
 console.log("test");
+let mountains = [
+    { name: "Kilimanjaro", height: 19341 },
+    { name: "Everest", height: 29029 },
+    { name: "Denali", height: 20310 }
+];
+function findNameOfTallestMountain(mountainArray) {
+    let tallestMountain = { name: "", height: 0 };
+    for (let mountain of mountainArray) {
+        if (mountain.height > tallestMountain.height) {
+            tallestMountain = mountain;
+        }
+    }
+    return tallestMountain.name;
+}
+console.log(findNameOfTallestMountain(mountains));
+console.log("test");
 let products = [
     { name: "fuji400", price: 5 },
     { name: "cinestill", price: 10 },
@@ -23,6 +39,11 @@ let inventory = [
 function calcInventoryValue(items) {
     let inventoryTotal = 0;
     items.forEach(item => (inventoryTotal += item.product.price * item.quantity));
+    let i = 0;
+    do {
+        inventoryTotal += items[i].product.price * items[i].quantity;
+        i++;
+    } while (i < items.length);
     return inventoryTotal;
 }
 console.log(calcInventoryValue(inventory));

@@ -64,11 +64,22 @@ let inventory: InventoryItem[] = [
 
 function calcInventoryValue(items: InventoryItem[]): number {
   let inventoryTotal: number = 0;
+  ///////////-----------for each
   items.forEach(item => (inventoryTotal += item.product.price * item.quantity));
-
+  ///////////-----------for of
+  // for (let item of items) {
+  //   inventoryTotal += item.product.price * item.quantity;
+  // }
+  ///////////-----------for
+  // for (let i = 0; i < items.length; i++) {
+  //   inventoryTotal += items[i].product.price * items[i].quantity;
+  // }
+  ///////////-----------superlong
   //   inventoryTotal = items[0].product.price * items[0].quantity;
   //   inventoryTotal += items[1].product.price * items[1].quantity;
   //   inventoryTotal += items[2].product.price * items[2].quantity;
+  //////////------------do/while
+
   return inventoryTotal;
 }
 
