@@ -38,7 +38,6 @@ let inventory = [
 ];
 function calcInventoryValue(items) {
     let inventoryTotal = 0;
-    items.forEach(item => (inventoryTotal += item.product.price * item.quantity));
     let i = 0;
     do {
         inventoryTotal += items[i].product.price * items[i].quantity;
